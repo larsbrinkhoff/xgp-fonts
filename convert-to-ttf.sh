@@ -5,7 +5,8 @@
 
 for i in bdf/*.bdf; do
     name=`basename $i .bdf`
-    $MKTTF -A'--alphamax 0 --unit 100' $i
-    mv *.ttf ttf/$name.ttf
-    rm *.sfd
+    #$MKTTF -A'--alphamax 0 --unit 100' $i
+    #mv *.ttf ttf/$name.ttf
+    #rm *.sfd
+    fonttosfnt/fonttosfnt -b -c -g 2 -m 2 -o ttf/$name.ttf $i
 done
